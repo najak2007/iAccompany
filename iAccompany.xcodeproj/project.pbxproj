@@ -6,9 +6,77 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		890F8F142FB07684005020A0 /* DeviceActivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 890F8F002FB073F8005020A0 /* DeviceActivity.framework */; };
+		890F8F1C2FB07684005020A0 /* ActivityMonitor.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 890F8F132FB07684005020A0 /* ActivityMonitor.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		890F8F312FB076B5005020A0 /* ActivityReport.appex in Embed ExtensionKit Extensions */ = {isa = PBXBuildFile; fileRef = 890F8F252FB076B5005020A0 /* ActivityReport.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		890F8F1A2FB07684005020A0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7A698CDF2FACAEB5000810A6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 890F8F122FB07684005020A0;
+			remoteInfo = ActivityMonitor;
+		};
+		890F8F2F2FB076B5005020A0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7A698CDF2FACAEB5000810A6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 890F8F242FB076B5005020A0;
+			remoteInfo = ActivityReport;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		890F8F0E2FB073F8005020A0 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				890F8F1C2FB07684005020A0 /* ActivityMonitor.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		890F8F362FB076B5005020A0 /* Embed ExtensionKit Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(EXTENSIONS_FOLDER_PATH)";
+			dstSubfolderSpec = 16;
+			files = (
+				890F8F312FB076B5005020A0 /* ActivityReport.appex in Embed ExtensionKit Extensions */,
+			);
+			name = "Embed ExtensionKit Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		7A698CE72FACAEB5000810A6 /* iAccompany.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iAccompany.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		890F8F002FB073F8005020A0 /* DeviceActivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DeviceActivity.framework; path = System/Library/Frameworks/DeviceActivity.framework; sourceTree = SDKROOT; };
+		890F8F132FB07684005020A0 /* ActivityMonitor.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ActivityMonitor.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		890F8F252FB076B5005020A0 /* ActivityReport.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.extensionkit-extension"; includeInIndex = 0; path = ActivityReport.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		890F8F1D2FB07684005020A0 /* Exceptions for "ActivityMonitor" folder in "ActivityMonitor" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 890F8F122FB07684005020A0 /* ActivityMonitor */;
+		};
+		890F8F322FB076B5005020A0 /* Exceptions for "ActivityReport" folder in "ActivityReport" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 890F8F242FB076B5005020A0 /* ActivityReport */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		7A698CE92FACAEB5000810A6 /* iAccompany */ = {
@@ -16,10 +84,46 @@
 			path = iAccompany;
 			sourceTree = "<group>";
 		};
+		890F8F022FB073F8005020A0 /* ActivityMontor */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = ActivityMontor;
+			sourceTree = "<group>";
+		};
+		890F8F152FB07684005020A0 /* ActivityMonitor */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				890F8F1D2FB07684005020A0 /* Exceptions for "ActivityMonitor" folder in "ActivityMonitor" target */,
+			);
+			path = ActivityMonitor;
+			sourceTree = "<group>";
+		};
+		890F8F262FB076B5005020A0 /* ActivityReport */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				890F8F322FB076B5005020A0 /* Exceptions for "ActivityReport" folder in "ActivityReport" target */,
+			);
+			path = ActivityReport;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		7A698CE42FACAEB5000810A6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		890F8F102FB07684005020A0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				890F8F142FB07684005020A0 /* DeviceActivity.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		890F8F222FB076B5005020A0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -33,6 +137,10 @@
 			isa = PBXGroup;
 			children = (
 				7A698CE92FACAEB5000810A6 /* iAccompany */,
+				890F8F022FB073F8005020A0 /* ActivityMontor */,
+				890F8F152FB07684005020A0 /* ActivityMonitor */,
+				890F8F262FB076B5005020A0 /* ActivityReport */,
+				890F8EFF2FB073F8005020A0 /* Frameworks */,
 				7A698CE82FACAEB5000810A6 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -41,8 +149,18 @@
 			isa = PBXGroup;
 			children = (
 				7A698CE72FACAEB5000810A6 /* iAccompany.app */,
+				890F8F132FB07684005020A0 /* ActivityMonitor.appex */,
+				890F8F252FB076B5005020A0 /* ActivityReport.appex */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		890F8EFF2FB073F8005020A0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				890F8F002FB073F8005020A0 /* DeviceActivity.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -55,10 +173,14 @@
 				7A698CE32FACAEB5000810A6 /* Sources */,
 				7A698CE42FACAEB5000810A6 /* Frameworks */,
 				7A698CE52FACAEB5000810A6 /* Resources */,
+				890F8F0E2FB073F8005020A0 /* Embed Foundation Extensions */,
+				890F8F362FB076B5005020A0 /* Embed ExtensionKit Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				890F8F1B2FB07684005020A0 /* PBXTargetDependency */,
+				890F8F302FB076B5005020A0 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				7A698CE92FACAEB5000810A6 /* iAccompany */,
@@ -69,6 +191,50 @@
 			productName = iAccompany;
 			productReference = 7A698CE72FACAEB5000810A6 /* iAccompany.app */;
 			productType = "com.apple.product-type.application";
+		};
+		890F8F122FB07684005020A0 /* ActivityMonitor */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 890F8F1E2FB07684005020A0 /* Build configuration list for PBXNativeTarget "ActivityMonitor" */;
+			buildPhases = (
+				890F8F0F2FB07684005020A0 /* Sources */,
+				890F8F102FB07684005020A0 /* Frameworks */,
+				890F8F112FB07684005020A0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				890F8F152FB07684005020A0 /* ActivityMonitor */,
+			);
+			name = ActivityMonitor;
+			packageProductDependencies = (
+			);
+			productName = ActivityMonitor;
+			productReference = 890F8F132FB07684005020A0 /* ActivityMonitor.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		890F8F242FB076B5005020A0 /* ActivityReport */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 890F8F332FB076B5005020A0 /* Build configuration list for PBXNativeTarget "ActivityReport" */;
+			buildPhases = (
+				890F8F212FB076B5005020A0 /* Sources */,
+				890F8F222FB076B5005020A0 /* Frameworks */,
+				890F8F232FB076B5005020A0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				890F8F262FB076B5005020A0 /* ActivityReport */,
+			);
+			name = ActivityReport;
+			packageProductDependencies = (
+			);
+			productName = ActivityReport;
+			productReference = 890F8F252FB076B5005020A0 /* ActivityReport.appex */;
+			productType = "com.apple.product-type.extensionkit-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -81,6 +247,12 @@
 				LastUpgradeCheck = 2640;
 				TargetAttributes = {
 					7A698CE62FACAEB5000810A6 = {
+						CreatedOnToolsVersion = 26.4.1;
+					};
+					890F8F122FB07684005020A0 = {
+						CreatedOnToolsVersion = 26.4.1;
+					};
+					890F8F242FB076B5005020A0 = {
 						CreatedOnToolsVersion = 26.4.1;
 					};
 				};
@@ -100,12 +272,28 @@
 			projectRoot = "";
 			targets = (
 				7A698CE62FACAEB5000810A6 /* iAccompany */,
+				890F8F122FB07684005020A0 /* ActivityMonitor */,
+				890F8F242FB076B5005020A0 /* ActivityReport */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		7A698CE52FACAEB5000810A6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		890F8F112FB07684005020A0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		890F8F232FB076B5005020A0 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -122,7 +310,34 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		890F8F0F2FB07684005020A0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		890F8F212FB076B5005020A0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		890F8F1B2FB07684005020A0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 890F8F122FB07684005020A0 /* ActivityMonitor */;
+			targetProxy = 890F8F1A2FB07684005020A0 /* PBXContainerItemProxy */;
+		};
+		890F8F302FB076B5005020A0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 890F8F242FB076B5005020A0 /* ActivityReport */;
+			targetProxy = 890F8F2F2FB076B5005020A0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		7A698CF02FACAEB6000810A6 /* Debug */ = {
@@ -332,6 +547,138 @@
 			};
 			name = Release;
 		};
+		890F8F1F2FB07684005020A0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = ActivityMonitor/ActivityMonitor.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = GFSSMD5582;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ActivityMonitor/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ActivityMonitor;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = co.kr.oceanbleu.iAccompany.ActivityMonitor;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "i동행_액티브모니터_20260510";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		890F8F202FB07684005020A0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = ActivityMonitor/ActivityMonitor.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = GFSSMD5582;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ActivityMonitor/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ActivityMonitor;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = co.kr.oceanbleu.iAccompany.ActivityMonitor;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "i동행_액티브모니터_20260510";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		890F8F342FB076B5005020A0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = ActivityReport/ActivityReport.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = GFSSMD5582;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ActivityReport/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ActivityReport;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = co.kr.oceanbleu.iAccompany.ActivityReport;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "i동행_액티브리포터_20260510";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		890F8F352FB076B5005020A0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = ActivityReport/ActivityReport.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = GFSSMD5582;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ActivityReport/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ActivityReport;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = co.kr.oceanbleu.iAccompany.ActivityReport;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "i동행_액티브리포터_20260510";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -349,6 +696,24 @@
 			buildConfigurations = (
 				7A698CF32FACAEB6000810A6 /* Debug */,
 				7A698CF42FACAEB6000810A6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		890F8F1E2FB07684005020A0 /* Build configuration list for PBXNativeTarget "ActivityMonitor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				890F8F1F2FB07684005020A0 /* Debug */,
+				890F8F202FB07684005020A0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		890F8F332FB076B5005020A0 /* Build configuration list for PBXNativeTarget "ActivityReport" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				890F8F342FB076B5005020A0 /* Debug */,
+				890F8F352FB076B5005020A0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

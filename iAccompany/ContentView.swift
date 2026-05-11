@@ -10,32 +10,31 @@ import FamilyControls
 import ManagedSettings
 
 struct ContentView: View {
-
     @State private var isPickerPresented = false
     @State private var selection = FamilyActivitySelection()
 
+    @EnvironmentObject var screenTimeModel: ScreenTimeModel
+
+    let center = AuthorizationCenter.shared
+    
     var body: some View {
         VStack {
             Button("앱 차단 선택") {
-                isPickerPresented.toggle()
+                Task {
+                    do {
+                        try await center.requestAuthorization(for: .individual)
+                        isPickerPresented = true
+                    } catch {
+                        print("권한 요청 실패 : \(error.localizedDescription)")
+                    }
+                }
             }
-            .familyActivityPicker(isPresented: $isPickerPresented, selection: $selection)
-            .onChange(of: selection) { oldSelection, newSelection in
+            .familyActivityPicker(isPresented: $isPickerPresented, selection: $screenTimeModel.selectedtoLimit)
+            .onChange(of: screenTimeModel.selectedtoLimit) { oldSelection, newSelection in
                 print("선택된 앱 차단 목록: \(newSelection)")
-                blockApps(selection: newSelection)
+                ScreenTimeModel.shared.setShieldRestrictions()
             }
         }
         .padding()
-    }
-    
-    func blockApps(selection: FamilyActivitySelection) {
-        let store = ManagedSettingsStore()
-        store.shield.applications = selection.applicationTokens
-        store.shield.webDomains = selection.webDomainTokens
-    }
-    
-    func unblockApps() {
-        let store = ManagedSettingsStore()
-        store.clearAllSettings()
     }
 }
