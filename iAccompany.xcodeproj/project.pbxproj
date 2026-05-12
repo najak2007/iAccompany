@@ -84,11 +84,6 @@
 			path = iAccompany;
 			sourceTree = "<group>";
 		};
-		890F8F022FB073F8005020A0 /* ActivityMontor */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = ActivityMontor;
-			sourceTree = "<group>";
-		};
 		890F8F152FB07684005020A0 /* ActivityMonitor */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
@@ -137,7 +132,6 @@
 			isa = PBXGroup;
 			children = (
 				7A698CE92FACAEB5000810A6 /* iAccompany */,
-				890F8F022FB073F8005020A0 /* ActivityMontor */,
 				890F8F152FB07684005020A0 /* ActivityMonitor */,
 				890F8F262FB076B5005020A0 /* ActivityReport */,
 				890F8EFF2FB073F8005020A0 /* Frameworks */,
