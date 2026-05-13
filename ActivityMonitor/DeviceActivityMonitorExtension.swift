@@ -10,19 +10,12 @@ import ManagedSettings
 import FamilyControls
 import Foundation
 
-// Optionally override any of the functions below.
-// Make sure that your class name matches the NSExtensionPrincipalClass in your Info.plist.
 class DeviceActivityMonitorExtension: DeviceActivityMonitor {
     let store = ManagedSettingsStore()
     
     // 장치 활동 간격이 시작
     override func intervalDidStart(for activity: DeviceActivityName) {
         super.intervalDidStart(for: activity)
-        
-        if let selection = loadSelectedApps() {
-            print("앱 목록 로드 성공")
-            blockSelectedApps(selection)
-        }
     }
     
     // 장치 활동 간격이 끝
@@ -48,23 +41,7 @@ class DeviceActivityMonitorExtension: DeviceActivityMonitor {
     override func eventWillReachThresholdWarning(_ event: DeviceActivityEvent.Name, activity: DeviceActivityName) {
         super.eventWillReachThresholdWarning(event, activity: activity)
     }
-    
-    
-    private func loadSelectedApps() -> FamilyActivitySelection? {
-        let userDefaults = UserDefaults(suiteName: "group.co.kr.oceanbleu")
-        guard let data = userDefaults?.data(forKey: "accompanyKey")
-        else {
-            return nil
-        }
-        
-        do {
-            let model = try JSONDecoder().decode(ScreenTimeModel.self, from: data)
-            return model.selectedtoLimit
-        } catch {
-            print("앱 목록 로드 실패 : \(error)")
-            return nil
-        }
-    }
+ 
     
     private func blockSelectedApps(_ selection: FamilyActivitySelection) {
         // 앱 차단 설정

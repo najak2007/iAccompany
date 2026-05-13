@@ -18,7 +18,7 @@ struct ContentView: View {
     let center = AuthorizationCenter.shared
     
     var body: some View {
-        VStack {
+        VStack(spacing: 30) {
             Button("앱 차단 선택") {
                 Task {
                     do {
@@ -33,6 +33,10 @@ struct ContentView: View {
             .onChange(of: screenTimeModel.selectedtoLimit) { oldSelection, newSelection in
                 print("선택된 앱 차단 목록: \(newSelection)")
                 ScreenTimeModel.shared.setShieldRestrictions()
+            }
+            
+            Button("앱 모니터") {
+                
             }
         }
         .padding()
