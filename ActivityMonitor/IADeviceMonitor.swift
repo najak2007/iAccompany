@@ -1,5 +1,5 @@
 //
-//  DeviceActivityMonitorExtension.swift
+//  IADeviceMonitor.swift
 //  ActivityMonitor
 //
 //  Created by najak on 5/10/26.
@@ -10,7 +10,7 @@ import ManagedSettings
 import FamilyControls
 import Foundation
 
-class DeviceActivityMonitorExtension: DeviceActivityMonitor {
+class IADeviceMonitor: DeviceActivityMonitor {
     let store = ManagedSettingsStore()
     
     // 장치 활동 간격이 시작
