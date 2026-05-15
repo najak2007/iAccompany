@@ -33,6 +33,7 @@ struct ContentView: View {
             .onChange(of: screenTimeModel.selectedtoLimit) { oldSelection, newSelection in
                 print("선택된 앱 차단 목록: \(newSelection)")
                 ScreenTimeModel.shared.setShieldRestrictions()
+                let _ = ScreenTimeModel.shared.getSelection()
             }
             
             Button("앱 모니터") {

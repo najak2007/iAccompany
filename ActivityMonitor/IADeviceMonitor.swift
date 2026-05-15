@@ -9,13 +9,67 @@ import DeviceActivity
 import ManagedSettings
 import FamilyControls
 import Foundation
+import UserNotifications
 
 class IADeviceMonitor: DeviceActivityMonitor {
+    let sharedStorage = UserDefaults(suiteName: "iAccompanyStorage")
     let store = ManagedSettingsStore()
+    
+    
+    func getSelection() -> FamilyActivitySelection {
+        let documentsDirectory = FileManager().containerURL(forSecurityApplicationGroupIdentifier: "group.co.kr.oceanbleu")
+        
+        guard let archiveURL = documentsDirectory?.appendingPathComponent("selection.plist")
+        else {
+            print("FamilyActivitySelection 가져오기 실패: selection.plist 없음")
+            return FamilyActivitySelection()
+        }
+        
+        guard let codeData = try? Data(contentsOf: archiveURL)
+        else {
+            print("FamilyActivitySelection 가져오기 실패: codeData 없음")
+            return FamilyActivitySelection()
+        }
+        
+        print("FamilyActivitySelection 가져오기 성공")
+        
+        let decoder = PropertyListDecoder()
+        let loadedSelection = (try! decoder.decode(FamilyActivitySelection.self, from: codeData))
+        print("loadedSelection: \(loadedSelection.applicationTokens)")
+        
+        return loadedSelection
+    }
+    
+    func showLocalNotification(title: String, desc: String) {
+        let content = UNMutableNotificationContent()
+        content.title = title
+        content.body = desc
+        content.sound = .default
+        
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
+        let request = UNNotificationRequest(identifier: "localNotification", content: content, trigger: trigger)
+        
+        UNUserNotificationCenter.current().add(request) { error in
+            if let error = error {
+                print("로컬 푸시 실패: \(error.localizedDescription)")
+            } else {
+                print("로컬 푸시 성공")
+            }
+        }
+    }
     
     // 장치 활동 간격이 시작
     override func intervalDidStart(for activity: DeviceActivityName) {
         super.intervalDidStart(for: activity)
+
+        let selection = getSelection()
+        
+        let applications = selection
+            store.shield.applications = applications.applicationTokens.isEmpty ? nil : applications.applicationTokens
+            store.shield.applicationCategories = applications.categoryTokens.isEmpty
+            ? nil
+            : ShieldSettings.ActivityCategoryPolicy.specific(applications.categoryTokens)
+        showLocalNotification(title: "intervalDidStart", desc: "\(applications.applicationTokens)")
     }
     
     // 장치 활동 간격이 끝
